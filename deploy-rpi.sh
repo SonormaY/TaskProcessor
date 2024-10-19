@@ -19,6 +19,11 @@ operation_success() {
     echo ""
 }
 
+echo -e "${YELLOW}Pulling latest changes...${NC}"
+git pull
+check_success
+operation_success
+
 echo -e "${YELLOW}apt update and upgrade starting...${NC}"
 sudo apt update -qq && sudo apt upgrade -y -qq
 check_success
